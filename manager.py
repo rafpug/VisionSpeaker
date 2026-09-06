@@ -16,9 +16,11 @@ def main():
 
     try:
         for line in process.stdout:
-            print("stuck")
             line = line.strip().split("/")
             print(line[0], flush=True)
+
+            subprocess.run(["ssh", f"{voice_user}@{voice_ip}", "python", "~/AIY-projects/src/aiy/voice/tts.py", f"'{line[0]}'"], check=True)
+
     except KeyboardInterrupt:
         print("\nStopping SSH connection...")
         process.terminate()
