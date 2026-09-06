@@ -85,7 +85,7 @@ def main():
                     #     camera.annotate_text = '%s (%.2f)' % classes[0]
             
             best_guess = max(possibilities, key=possibilities.get)
-            print(best_guess)
+            print(best_guess, flush=True)
 
 if __name__ == '__main__':
     main()
